@@ -23,15 +23,11 @@ class Reunion
   end
 
   def split_cost
-    (total_cost/activities[0].keys.count).round(2)
+    total_participants = {}
+    activities.each do |activity|
+      total_participants.merge!(activity.participants)
+    end
+    (total_cost/total_participants.keys.count).round(2)
   end
-
-  # def settle_up
-  #   participants_settle_up = {}
-  #   participants.each do |key, value|
-  #     participants_settle_up[key] = (split_cost - value)
-  #   end
-  #   participants_settle_up
-  # end
 
 end

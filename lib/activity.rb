@@ -23,8 +23,8 @@ class Activity
 
   def settle_up
     participants_settle_up = {}
-    participants.each do |key, value|
-      participants_settle_up[key] = (split_cost - value)
+    participants.each do |participant, expense|
+      participants_settle_up[participant] = (split_cost - expense)
     end
     participants_settle_up
   end

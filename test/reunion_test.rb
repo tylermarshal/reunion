@@ -33,12 +33,8 @@ class ReunionTest < Minitest::Test
 
   def test_it_can_split_the_cost_of_reunion
     @reunion.add_activities("Barbeque", {"Bob" => 0, "Sally" => 5000, "Jim" => 800})
-    
+
     assert_equal 2120, @reunion.split_cost
   end
-
-
-
-
 
 end
