@@ -29,7 +29,6 @@ class ActivityTest < Minitest::Test
   end
 
   def test_it_can_determine_how_much_each_person_is_owed
-    @activity.settle_up
-    assert_equal ({"Bob" => -53.33, "Sally" => 66.67, "Jim" => -13.33}), @activity.participants_settle_up
+    assert_equal ({"Bob" => -53.33, "Sally" => 66.67, "Jim" => -13.33}), @activity.settle_up
   end
 end

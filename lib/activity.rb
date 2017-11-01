@@ -2,12 +2,11 @@ require 'bigdecimal'
 
 class Activity
 
-  attr_reader :name, :participants, :participants_settle_up
+  attr_reader :name, :participants
 
   def initialize(name, participants)
     @name = name
     @participants = participants
-    @participants_settle_up = {}
   end
 
   def add_participant(name,expenditure)
@@ -23,9 +22,11 @@ class Activity
   end
 
   def settle_up
+    participants_settle_up = {}
     participants.each do |key, value|
       participants_settle_up[key] = (split_cost - value)
     end
+    participants_settle_up
   end
 
 
